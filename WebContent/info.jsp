@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="weibo.dao.model.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,20 +8,23 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+User user = (User)session.getAttribute("user");
+%>
 <table>
 	<tr>
-		<td width="70px" align="center"><img src="img/demo1.jpg" width="50px" height="50px"/></td>
+		<td width="70px" align="center"><img src="<%=user.getHeadImg() %>" width="50px" height="50px"/></td>
 		<td>
-			Java Programmer<br/>
-			来自 吉林长春
+			<%=user.getNickName() %><br/>
+			<%=user.getLocal() %>
 		</td>
 	</tr>
 </table>
 <table>
 	<tr>
-		<td width="50px" align="center"><b>38</b></td>
-		<td width="50px" align="center"><b>48</b></td>
-		<td width="50px" align="center"><b>58</b></td>
+		<td width="50px" align="center"><b><%=user.getFollowCount() %></b></td>
+		<td width="50px" align="center"><b><%=user.getFansCount() %></b></td>
+		<td width="50px" align="center"><b><%=user.getMessageCount() %></b></td>
 	</tr>
 	<tr>
 		<td align="center">关注</td>

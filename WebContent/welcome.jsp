@@ -7,7 +7,13 @@
 <title>登陆</title>
 </head>
 <body>
-<form action="#" method="post">
+<form action="LoginServlet" method="post">
+<%
+String errorMsg = (String)request.getAttribute("errorMsg");
+if(errorMsg != null) {
+	%><div style="width:300px; background-color:red;"><%=errorMsg %></div><%
+}
+%>
 <table>
 	<tr>
 		<td>用户名</td>
@@ -18,9 +24,15 @@
 		<td><input type="password" name="password" /></td>
 	</tr>
 	<tr>
-		<td colspan="2"><input type="submit" value="登陆"/>&nbsp;&nbsp;<a href="regist.html">新用户注册</a></td>
+		<td colspan="2"><input type="submit" value="登陆"/>&nbsp;&nbsp;<a href="regist.jsp">新用户注册</a></td>
 	</tr>
 </table>
 </form>
+
+<script type="text/javascript">
+function regist() {
+	window.location = "regist.jsp";
+}
+</script>
 </body>
 </html>

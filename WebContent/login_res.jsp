@@ -13,8 +13,7 @@
 User user = (User)request.getSession().getAttribute("user");
 %>
 <div align="center">
-	<h2><%= user.getName() %>&nbsp;注册成功</h2><br/>
-	<h3>请牢记用户名和口令</h3>
+	<h2>欢迎 <%=user.getNickName() %></h2><br/>
 	<p/>
 	3秒钟后页面将自动跳转，手动跳转请点击&nbsp;<a href="space.html">[这里]</a>
 </div>

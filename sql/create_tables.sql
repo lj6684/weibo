@@ -1,0 +1,37 @@
+DROP TABLE user;
+DROP TABLE message;
+DROP TABLE contact;
+DROP TABLE comment;
+
+CREATE TABLE user (
+	uid INT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(30) NOT NULL,
+	nick_name VARCHAR(30) NOT NULL,
+	password VARCHAR(30) NOT NULL,
+	local VARCHAR(30) NOT NULL,
+	head_img VARCHAR(50),
+	PRIMARY KEY(uid)
+);
+
+CREATE TABLE message (
+	mid INT NOT NULL AUTO_INCREMENT,
+	uid INT NOT NULL,
+	content VARCHAR(450) NOT NULL,
+	img VARCHAR(50),
+	create_time DATETIME NOT NULL,
+	PRIMARY KEY(mid)
+);
+
+CREATE TABLE contact (
+	uid INT NOT NULL,
+	tid INT NOT NULL
+);
+
+CREATE TABLE comment (
+	cid INT NOT NULL AUTO_INCREMENT,
+	mid INT NOT NULL,
+	uid INT NOT NULL,
+	comment VARCHAR(450),
+	create_time DATETIME NOT NULL,
+	PRIMARY KEY(cid)
+);
