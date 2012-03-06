@@ -35,7 +35,7 @@ public class CharactorEncodeFilter implements Filter {
 		// place your code here
 
 		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
+		//response.setCharacterEncoding("UTF-8");
 		
 		chain.doFilter(request, response);
 		

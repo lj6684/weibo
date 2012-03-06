@@ -22,8 +22,8 @@ User user = (User)session.getAttribute("user");
 </table>
 <table>
 	<tr>
-		<td width="50px" align="center"><b><%=user.getFollowCount() %></b></td>
-		<td width="50px" align="center"><b><%=user.getFansCount() %></b></td>
+		<td width="50px" align="center"><a href="ListUserServlet?type=target"><%=user.getFollowCount() %></a></td>
+		<td width="50px" align="center"><a href="ListUserServlet?type=fans"><%=user.getFansCount() %></a></td>
 		<td width="50px" align="center"><b><%=user.getMessageCount() %></b></td>
 	</tr>
 	<tr>
@@ -47,5 +47,22 @@ User user = (User)session.getAttribute("user");
 		<td><a href="#">我的收藏</a></td>
 	</tr>
 </table>
+<p/>
+<form action="FindUserServlet" method="post">
+<table>
+	<tr>
+		<td height="30px" bgcolor=""><font size="+2">查找好友</font></td>
+	</tr>
+	<tr>
+		<td>好友昵称</td>
+	</tr>
+	<tr>
+		<td><input type="text" name="nickName"/></td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="查找" /></td>
+	</tr>
+</table>
+</form>
 </body>
 </html>

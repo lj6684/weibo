@@ -18,16 +18,16 @@ public class MessageDAO {
 	 */
 	public int saveMessage(Message message) {
 		Connection conn = ConnectionManager.getInstance().getConnection();
-		PreparedStatement stmt = null;
+		PreparedStatement pstmt = null;
 		try {
 			String sql = "insert into message(uid, content, img, create_time) values(?,?,?,?)";
-			stmt = conn.prepareStatement(sql);
-			stmt.setInt(1, message.getUid());
-			stmt.setString(2, message.getContent());
-			stmt.setString(3, message.getImg());
-			stmt.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, message.getUid());
+			pstmt.setString(2, message.getContent());
+			pstmt.setString(3, message.getImg());
+			pstmt.setTimestamp(4, new Timestamp(System.currentTimeMillis()));
 			
-			return stmt.executeUpdate();
+			return pstmt.executeUpdate();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			return 0;
@@ -36,8 +36,8 @@ public class MessageDAO {
 				if(conn != null) {
 					conn.close();
 				}
-				if(stmt != null) {
-					stmt.close();
+				if(pstmt != null) {
+					pstmt.close();
 				}
 			} catch (Exception ex) {
 				

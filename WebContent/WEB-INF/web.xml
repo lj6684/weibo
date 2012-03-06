@@ -61,4 +61,24 @@
     <filter-name>CharactorEncodeFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FindUserServlet</display-name>
+    <servlet-name>FindUserServlet</servlet-name>
+    <servlet-class>weibo.web.FindUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FindUserServlet</servlet-name>
+    <url-pattern>/FindUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListUserServlet</display-name>
+    <servlet-name>ListUserServlet</servlet-name>
+    <servlet-class>weibo.web.ListUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListUserServlet</servlet-name>
+    <url-pattern>/ListUserServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
